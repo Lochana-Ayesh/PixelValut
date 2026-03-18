@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - PixelVault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        secondary: '#06b6d4',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-darker text-gray-200 font-sans antialiased overflow-x-hidden">
+    
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fa-solid fa-camera-retro text-3xl text-gradient"></i>
+                        <span class="font-heading font-bold text-2xl tracking-wider text-white">Pixel<span class="text-gradient">Vault</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="explore.html" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:text-secondary transition-colors">Explore</a>
+                        <a href="profile.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Photographers</a>
+                        <a href="upload.html" class="btn-gradient text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg ml-4">
+                            <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Upload
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="explore.html" class="text-white block px-3 py-2 rounded-md text-base font-medium">Explore</a>
+                <a href="profile.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Photographers</a>
+                <a href="upload.html" class="text-secondary font-bold block px-3 py-2 rounded-md text-base">Upload Photo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-32 pb-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12 animate-fade-in delay-100">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">Discover <span class="text-gradient">Inspiration</span></h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">Explore millions of stunning photos uploaded by the best photographers around the globe.</p>
+            
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <button class="px-5 py-2 rounded-full bg-white text-darker font-medium text-sm transition-all shadow-[0_0_10px_rgba(255,255,255,0.2)]">All</button>
+                <button class="px-5 py-2 rounded-full border border-gray-700 text-gray-300 font-medium text-sm hover:border-gray-500 hover:text-white transition-all">Nature</button>
+                <button class="px-5 py-2 rounded-full border border-gray-700 text-gray-300 font-medium text-sm hover:border-gray-500 hover:text-white transition-all">Cyberpunk</button>
+                <button class="px-5 py-2 rounded-full border border-gray-700 text-gray-300 font-medium text-sm hover:border-gray-500 hover:text-white transition-all">Portraits</button>
+                <button class="px-5 py-2 rounded-full border border-gray-700 text-gray-300 font-medium text-sm hover:border-gray-500 hover:text-white transition-all">Wildlife</button>
+            </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="masonry animate-fade-in delay-200">
+            <!-- Item 1 -->
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="assets/images/photo_1.png" class="w-full h-auto photo-img block" alt="Gallery Photo">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Neon City</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=33" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Alex Cyber</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn">
+                                <i class="fa-solid fa-heart text-white text-xs"></i>
+                            </button>
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-primary/40 transition-colors">
+                                <i class="fa-solid fa-download text-white text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="assets/images/photo_2.png" class="w-full h-auto photo-img block" alt="Gallery Photo">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Neon Portrait</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=47" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Sarah Jenkins</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-primary/40 transition-colors"><i class="fa-solid fa-download text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="assets/images/photo_3.png" class="w-full h-auto photo-img block" alt="Gallery Photo">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Jungle Majesty</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=12" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">David Rossi</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-primary/40 transition-colors"><i class="fa-solid fa-download text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="assets/images/hero_bg.png" class="w-full h-auto photo-img block" alt="Gallery Photo">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Misty Peaks</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=68" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Elena Miles</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-primary/40 transition-colors"><i class="fa-solid fa-download text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adding realistic content -->
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-auto photo-img block" alt="Tech">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Circuit Dreams</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=1" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Tech Shooter</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=800" class="w-full h-auto photo-img block" alt="Nature">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Wild Heart</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=5" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Julia Forest</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="https://images.unsplash.com/photo-1531297172864-45d1b74251cc?auto=format&fit=crop&q=80&w=800" class="w-full h-auto photo-img block" alt="Future">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Neon Grid</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=11" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Sam Void</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="masonry-item rounded-xl overflow-hidden relative group break-inside-avoid shadow-lg bg-slate-800">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800" class="w-full h-auto photo-img block" alt="Camera">
+                <div class="absolute inset-0 photo-overlay flex flex-col justify-end p-4">
+                    <div class="flex justify-between items-end transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div>
+                            <h3 class="text-white font-semibold">Focus Lens</h3>
+                            <a href="profile.html" class="flex items-center gap-2 mt-1 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=22" class="w-5 h-5 rounded-full">
+                                <span class="text-xs text-gray-300">Emily Stone</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-secondary/40 transition-colors like-btn"><i class="fa-solid fa-heart text-white text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="mt-16 text-center">
+            <button class="px-8 py-3 rounded-full border border-gray-600 text-white font-medium hover:bg-white/5 transition-all w-full sm:w-auto shadow-lg hover:shadow-secondary/20 hover:border-secondary group">
+                <i class="fa-solid fa-spinner animate-spin mr-2 hidden"></i> 
+                Load More <i class="fa-solid fa-plus ml-2 group-hover:rotate-90 transition-transform"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-dark py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html" class="flex items-center justify-center gap-2 mb-6">
+                <i class="fa-solid fa-camera-retro text-2xl text-gradient"></i>
+                <span class="font-heading font-bold text-xl tracking-wider text-white">Pixel<span class="text-gradient">Vault</span></span>
+            </a>
+            <p class="text-gray-500 text-sm mb-6">Designed beautifully for creators worldwide. Build your portfolio with stunning aesthetics.</p>
+            <p class="text-gray-600 text-xs mt-8">&copy; 2026 PixelVault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

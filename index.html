@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelVault - Global Photography Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6', // Indigo
+                        secondary: '#06b6d4', // Cyan
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-darker text-gray-200 font-sans antialiased overflow-x-hidden">
+    
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fa-solid fa-camera-retro text-3xl text-gradient"></i>
+                        <span class="font-heading font-bold text-2xl tracking-wider text-white">Pixel<span class="text-gradient">Vault</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:text-secondary transition-colors">Home</a>
+                        <a href="explore.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Explore</a>
+                        <a href="profile.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Photographers</a>
+                        <a href="upload.html" class="btn-gradient text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg ml-4">
+                            <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Upload
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl">
+                <a href="index.html" class="text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="explore.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Explore</a>
+                <a href="profile.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Photographers</a>
+                <a href="upload.html" class="text-secondary font-bold block px-3 py-2 rounded-md text-base">Upload Photo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative min-h-screen flex items-center justify-center pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/hero_bg.png" alt="Photography Background" class="w-full h-full object-cover opacity-30 select-none hidden" onload="this.classList.remove('hidden'); this.classList.add('animate-fade-in');">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-darker/60 to-darker"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in delay-100">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-semibold mb-6 tracking-wide backdrop-blur-sm">
+                Join the Global Community
+            </span>
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white mb-6 leading-tight">
+                Share Your Vision <br>With The <span class="text-gradient hover-glow transition-all">World</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 font-light">
+                PixelVault is the premier platform for photographers to showcase their art, connect with global talent, and get discovered.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="explore.html" class="btn-gradient text-white px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_20px_rgba(139,92,246,0.3)] w-full sm:w-auto">
+                    Start Exploring <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="upload.html" class="px-8 py-4 rounded-full text-lg font-bold text-white border border-gray-600 hover:border-white hover:bg-white/5 transition-all w-full sm:w-auto backdrop-blur-sm">
+                    Upload Your Work
+                </a>
+            </div>
+            
+            <div class="mt-20 flex justify-center gap-8 text-gray-500 text-sm md:text-base animate-float">
+                <div class="flex flex-col items-center group">
+                    <span class="text-3xl font-bold text-white mb-1 group-hover:text-primary transition-colors">2M+</span>
+                    <span>Photos</span>
+                </div>
+                <div class="w-px h-12 bg-gray-800"></div>
+                <div class="flex flex-col items-center group">
+                    <span class="text-3xl font-bold text-white mb-1 group-hover:text-secondary transition-colors">150K+</span>
+                    <span>Creators</span>
+                </div>
+                <div class="w-px h-12 bg-gray-800"></div>
+                <div class="flex flex-col items-center group">
+                    <span class="text-3xl font-bold text-white mb-1 group-hover:text-primary transition-colors">190</span>
+                    <span>Countries</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Category Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto relative z-10">
+        <div class="flex justify-between items-end mb-12 animate-fade-in delay-200">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-white">Trending <span class="text-gradient">Masterpieces</span></h2>
+                <p class="text-gray-400 mt-2">Discover what the community loves today.</p>
+            </div>
+            <a href="explore.html" class="text-secondary hover:text-white transition-colors font-semibold hidden sm:flex items-center gap-1 group">
+                View Gallery <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in delay-300">
+            <!-- Featured Card 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer relative h-80">
+                <img src="assets/images/photo_1.png" alt="Featured Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Neon Nights</h3>
+                            <a href="profile.html" class="text-sm text-gray-300 flex items-center gap-2 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=33" class="w-6 h-6 rounded-full border border-gray-500">
+                                Alex Cyber
+                            </a>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-secondary/20 transition-colors like-btn">
+                            <i class="fa-solid fa-heart text-white transition-colors duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Card 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer relative h-80">
+                <img src="assets/images/photo_2.png" alt="Featured Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Neon Portrait</h3>
+                            <a href="profile.html" class="text-sm text-gray-300 flex items-center gap-2 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=47" class="w-6 h-6 rounded-full border border-gray-500">
+                                Sarah Jenkins
+                            </a>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-secondary/20 transition-colors like-btn">
+                            <i class="fa-solid fa-heart text-white transition-colors duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Card 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer relative h-80">
+                <img src="assets/images/photo_3.png" alt="Featured Photo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+                
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Jungle Majesty</h3>
+                            <a href="profile.html" class="text-sm text-gray-300 flex items-center gap-2 hover:text-white transition-colors">
+                                <img src="https://i.pravatar.cc/100?img=12" class="w-6 h-6 rounded-full border border-gray-500">
+                                David Rossi
+                            </a>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-secondary/20 transition-colors like-btn">
+                            <i class="fa-solid fa-heart text-white transition-colors duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center sm:hidden">
+            <a href="explore.html" class="text-secondary font-semibold inline-flex items-center gap-1 group">
+                View Full Gallery <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-dark py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html" class="flex items-center justify-center gap-2 mb-6">
+                <i class="fa-solid fa-camera-retro text-2xl text-gradient"></i>
+                <span class="font-heading font-bold text-xl tracking-wider text-white">Pixel<span class="text-gradient">Vault</span></span>
+            </a>
+            <p class="text-gray-500 text-sm mb-6">Designed beautifully for creators worldwide. Build your portfolio with stunning aesthetics.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all shadow-lg hover:shadow-primary/30"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-secondary transition-all shadow-lg hover:shadow-secondary/30"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all shadow-lg hover:shadow-primary/30"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+            <p class="text-gray-600 text-xs mt-8">&copy; 2026 PixelVault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
